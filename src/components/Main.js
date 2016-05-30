@@ -43,6 +43,7 @@ class ImgFigure extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.handleClick2 = this.handleClick2.bind(this);
   }
 
   /*
@@ -57,6 +58,10 @@ class ImgFigure extends React.Component {
 
     e.stopPropagation();
     e.preventDefault();
+  }
+
+  handleClick2(e) {
+    alert(e)
   }
 
   render() {
@@ -84,13 +89,13 @@ class ImgFigure extends React.Component {
             imgFigureClassName += this.props.arrange.isInverse ? ' is-inverse' : '';
 
     return (
-      	<figure className={imgFigureClassName} style={styleObj} onClick={this.handleClick} >
+      	<figure className={imgFigureClassName} style={styleObj} onClick={this.handleClick}>
 	        <img src={this.props.data.imageURL}
 	             alt={this.props.data.title}
 	        />
 	        <figcaption>
 	            <h2 className="img-title">{this.props.data.title}</h2>
-	            <div className="img-back" onClick={this.handleClick}>
+	            <div className="img-back" onClick={this.handleClick2}>
 	              <p>
 	                {this.props.data.desc}
 	              </p>
